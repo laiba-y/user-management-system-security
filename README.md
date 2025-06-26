@@ -1,6 +1,9 @@
+
 # Simple User Management System
 
-A Node.js web application project with a user management system using Express and MongoDB.
+> Based on Pranav K’s original project – see https://github.com/Pranavk-Official/user-management
+
+A Node.js + Express + MongoDB app with added security hardening…
 
 > Live demo : [user-management](https://user-management-8fzd.onrender.com).
 >> Hosted on [render.com](https://render.com)
@@ -26,6 +29,13 @@ A Node.js web application project with a user management system using Express an
 - [x] Delete User
 - [ ] View Admin Profile
 - [ ] Block/Unblock User
+
+## Documentation
+
+- [Week 1 Security Assessment](./docs/Week1_Report.md)  
+- [Week 2 Security Enhancements](./docs/Week2_Report.md)  
+- [Week 3 Pen Testing & Logging](./docs/Week3_Report.md)  
+
 
 ### Security:
 - User authentication implemented using Passport.js local strategy.
@@ -104,4 +114,6 @@ The application should now be running on [localhost:3000](http://localhost:3000/
 ## Authors
 
 * **Pranav K** - *Initial work* - [Pranavk-Official](https://github.com/Pranavk-Official)
+
+- **Laiba Yousaf** – Security hardening, documentation, and deployment  
 

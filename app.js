@@ -1,3 +1,5 @@
+const helmet = require('helmet');
+
 require("dotenv").config();
 const createError = require("http-errors");
 const express = require("express");
@@ -35,6 +37,10 @@ const adminRouter = require("./src/routes/adminRoute");
 // Express App
 const app = express();
 
+// Hide framework info
+app.disable('x-powered-by');  //did this to hide framework detail information leaking as seen in NMAP
+
+app.use(helmet());
 // Connect Database
 connectDB();
 
@@ -43,6 +49,10 @@ app.use(expressLayouts);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.set("layout", "./layouts/userLayout");
+
+// adding logger.s link here
+const logger = require('./src/config/logger');
+logger.info('Application starting...');
 
 /**
  * Middlewares
@@ -65,7 +75,7 @@ app.use(nocache());
 // Session
 app.use(
   session({
-    secret: process.env.SECRET,
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     maxAge: 1000,
